@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummitWear.Server", "SummitWear.Server\SummitWear.Server.csproj", "{627A62E6-C32E-4247-8F27-1111343D1B30}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "summitwear.client", "summitwear.client\summitwear.client.esproj", "{24DC9C52-BDE2-431D-9E25-53843C47EA72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{627A62E6-C32E-4247-8F27-1111343D1B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627A62E6-C32E-4247-8F27-1111343D1B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627A62E6-C32E-4247-8F27-1111343D1B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627A62E6-C32E-4247-8F27-1111343D1B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DC9C52-BDE2-431D-9E25-53843C47EA72}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A455BF40-88E2-4285-86FA-9D364F179BB5}
+	EndGlobalSection
+EndGlobal
