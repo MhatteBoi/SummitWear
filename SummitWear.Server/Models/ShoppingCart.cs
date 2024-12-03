@@ -7,7 +7,7 @@ namespace SummitWear.Server.Models
         [Key]
         public Guid CartId { get; set; }
 
-        public Guid? UserId { get; set; } // Foreign key to User
+        public int? UserId { get; set; } // Foreign key to User
         public DateTime CreatedDate { get; set; }
         public decimal TotalPrice { get; set; }
         public string CartStatus { get; set; }

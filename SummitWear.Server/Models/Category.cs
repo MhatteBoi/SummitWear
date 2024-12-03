@@ -5,7 +5,7 @@ namespace SummitWear.Server.Models
     public class Category
     {
         [Key]
-        public Guid CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         public string Name { get; set; }
     }

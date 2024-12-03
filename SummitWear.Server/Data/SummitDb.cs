@@ -5,7 +5,7 @@ namespace SummitWear.Server.Data
 {
 
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -16,25 +16,11 @@ namespace SummitWear.Server.Data
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<UserInfo> UserInfos { get; set; }
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        { }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Product>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-
-            modelBuilder.Entity<OrderItem>()
-                .Property(oi => oi.UnitPrice)
-                .HasColumnType("decimal(18,2)");
-
-            modelBuilder.Entity<ShoppingCart>()
-                .Property(sc => sc.TotalPrice)
-                .HasColumnType("decimal(18,2)");
         }
+
     }
 }
+//have changed models!

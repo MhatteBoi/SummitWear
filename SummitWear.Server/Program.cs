@@ -18,12 +18,6 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.Migrate(); // Apply migrations on app startup (optional)
-}
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
