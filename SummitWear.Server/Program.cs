@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SummitWear.Server.Data;
+using SummitWear.Server.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,5 +33,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapFallbackToFile("/index.html");
+
+app.MapProductEndpoints();
 
 app.Run();
