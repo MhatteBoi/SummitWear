@@ -23,4 +23,4 @@ namespace SummitWear.Server.Data
 
     }
 }
-//have changed models!
+//Db is ready
