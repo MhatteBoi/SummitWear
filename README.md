@@ -1,1 +1,1 @@
-# Examen - SummitWear
+# Exam - SummitWear
