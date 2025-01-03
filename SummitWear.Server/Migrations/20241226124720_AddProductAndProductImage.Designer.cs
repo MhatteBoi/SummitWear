@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SummitWear.Server.Data;
 
@@ -11,9 +12,11 @@ using SummitWear.Server.Data;
 namespace SummitWear.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241226124720_AddProductAndProductImage")]
+    partial class AddProductAndProductImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,26 +112,6 @@ namespace SummitWear.Server.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            CategoryId = 1,
-                            Description = "Warm jacket",
-                            Name = "Jacket",
-                            Price = 150m,
-                            Stock = 10
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            CategoryId = 1,
-                            Description = "Hiking boots",
-                            Name = "winter-jacket",
-                            Price = 120m,
-                            Stock = 15
-                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.ProductImage", b =>
@@ -151,20 +134,6 @@ namespace SummitWear.Server.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImage");
-
-                    b.HasData(
-                        new
-                        {
-                            ImageId = 1,
-                            ProductId = 1,
-                            Url = "https://drive.google.com/uc?id=17K_lwUtbgkput0pWFkt6kYDlMPAGiP9a"
-                        },
-                        new
-                        {
-                            ImageId = 2,
-                            ProductId = 2,
-                            Url = "https://drive.google.com/uc?id=1DNTRyruDPuAIewlLyPz1phySo0LxhgPd"
-                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.ShoppingCart", b =>

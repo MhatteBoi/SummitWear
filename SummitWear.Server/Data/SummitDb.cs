@@ -3,8 +3,6 @@ using SummitWear.Server.Models;
 
 namespace SummitWear.Server.Data
 {
-
-
     public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
         public DbSet<User> Users { get; set; }
@@ -19,8 +17,9 @@ namespace SummitWear.Server.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-        }
 
+
+        }
     }
 }
-//Db is ready
+
