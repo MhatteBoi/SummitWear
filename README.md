@@ -70,19 +70,10 @@ Edit
 ng serve
 Visit http://localhost:4200 in your browser to view the application.
 
-Deployment
-To deploy the application to Azure (or your chosen platform), follow these steps:
+### Deployment
+The plan is to deploy on azure
 
-Set up an Azure account and create a Web App resource.
-Configure the app settings (e.g., connection strings) in the Azure portal.
-Deploy the backend (API) to Azure using Azure CLI or GitHub Actions.
-Deploy the frontend to Azure Static Web Apps or similar services.
-Ensure proper configurations for production (e.g., environment variables, build optimizations).
-Future Enhancements
-AI-Powered Search: Integrate advanced search capabilities with AI to recommend products based on user preferences.
-Payment Integration: Add payment options such as Stripe or PayPal for processing transactions.
-Performance Optimizations: Implement lazy loading for faster page load times and turn the app into a Progressive Web App (PWA) for offline capabilities.
-Contribution
+## Contribution
 Contributions are always welcome! If you find any bugs or have suggestions for new features, feel free to open an issue or create a pull request.
 
 Please ensure that you follow the project's coding standards and write clear commit messages when submitting changes.
