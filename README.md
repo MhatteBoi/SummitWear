@@ -90,12 +90,3 @@ Please ensure that you follow the project's coding standards and write clear com
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-vbnet
-Copy
-Edit
-
-### Improvements in this version:
-1. **Clarity and structure**: Clearer sections and instructions for installation and setup.
-2. **Enhanced deployment section**: Clearer instructions on how to deploy the app to Azure.
-3. **Additional sections**: I've added a "License" section for transparency and project organization. You can add your actual license file if you plan to share the project publicly.
-4. **Formatting**: I've made sure the code and instructions are easy to read and follow.
