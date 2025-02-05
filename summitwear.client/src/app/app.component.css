@@ -15,4 +15,5 @@ table {
 
 router-outlet {
   display: block; /* Adjust to match the navbar height */
+  background-color: antiquewhite;
 }

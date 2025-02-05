@@ -1,0 +1,54 @@
+<div class="max-w-7xl h-screen flex flex-col justify-center items-center mt-0 sm:-mt-12 mx-auto rounded-xl  lg:flex-row gap-6 p-6 bg-gradient-to-r from-amber-100 to-slate-300">
+    <!-- Weather Card -->
+    <div class="weather-card  max-h-fit bg-gradient-to-br from-white to-gray-50 p-6 rounded-lg shadow-lg w-full lg:w-1/3 flex flex-col justify-between">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Check Weather</h2>
+        <div class="mb-4">
+            <label for="city" class="block text-sm font-medium text-gray-700">Enter your city:</label>
+            <input id="city"
+                   type="text"
+                   class="mt-2 block w-full px-4 py-2 rounded border border-gray-300 focus:ring focus:ring-blue-300 focus:outline-none"
+                   [(ngModel)]="city"
+                   placeholder="E.g., Stockholm" />
+        </div>
+        <button class="bg-amber-700 text-white px-4 py-2 rounded hover:bg-amber-900 transition-colors w-full"
+                (click)="getWeather()">
+            Get Weather
+        </button>
+
+        <div *ngIf="weatherData" class="mt-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Weather in {{weatherData.name}}</h3>
+            <div class="flex items-center mb-4">
+                <span class="text-4xl font-semibold text-gray-900">
+                    {{weatherData.main.temp | number:'1.0-0'}}°C
+                </span>
+                <img [src]="'http://openweathermap.org/img/w/' + weatherData.weather[0].icon + '.png'"
+                     alt="Weather icon"
+                     class="ml-2 w-12 h-12" />
+            </div>
+            <p class="text-gray-600 capitalize">{{weatherData.weather[0].description}}</p>
+        </div>
+
+        <div *ngIf="errorMessage" class="text-red-500 mt-4">
+            {{errorMessage}}
+        </div>
+    </div>
+
+    <!-- Recommended Clothing -->
+    <div class="recommended-clothing w-full lg:w-2/3">
+        <h3 class="text-2xl font-bold mb-6 text-gray-800">Recommended Outdoor Clothing</h3>
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <li *ngFor="let item of suggestedClothing"
+                class="bg-white p-4 rounded-lg shadow-md flex flex-col sm:block">
+                <img *ngIf="!smallScreen" [src]="item.image" [alt]="item.name"
+                     class="w-full h-48 object-cover mb-4 rounded hidden sm:block" />
+                <div>
+                    <span class="block font-medium text-gray-800 mb-1">{{item.name}}</span>
+                    <span class="block text-gray-600 mb-2">{{item.price | currency}}</span>
+                </div>
+                <button class="bg-amber-700 text-white px-4 py-2 rounded hover:bg-amber-900 transition-colors w-full">
+                    Add to Cart
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

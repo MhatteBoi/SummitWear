@@ -1,1 +1,34 @@
-{"ConfigurationFile":"tailwind.config.js","BuildFiles":[],"UseCli":false}
+{
+  "$schema": "https://raw.githubusercontent.com/theron-wang/VS2022-Editor-Support-for-Tailwind-CSS/refs/heads/main/tailwind.extension.schema.json",
+  "ConfigurationFile": "tailwind.config.js",
+  "BuildFiles": [
+    {
+      "Input": "src\\styles.css",
+      "Output": ""
+    },
+    {
+      "Input": "src\\app\\app.component.css",
+      "Output": ""
+    },
+    {
+      "Input": "src\\app\\features\\home\\components\\weather\\weather.component.css",
+      "Output": ""
+    }
+  ],
+  "PackageConfigurationFile": "",
+  "CustomRegexes": {
+    "Razor": {
+      "Override": false,
+      "Values": []
+    },
+    "HTML": {
+      "Override": false,
+      "Values": []
+    },
+    "JavaScript": {
+      "Override": false,
+      "Values": []
+    }
+  },
+  "UseCli": false
+}
