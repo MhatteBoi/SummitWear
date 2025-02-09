@@ -1,12 +1,12 @@
 
 <img src="https://res.cloudinary.com/dm3vmtten/image/upload/v1737033442/SummitWearNoBg_qa98lx.png"></img> <br />
-**Summit Wear** is an e-commerce platform for outdoor clothing, built with Angular to provide a seamless and modern user experience. This project demonstrates fullstack web development best practices and utilizes cloud technologies for scalability and performance.
+**Summit Wear** is an e-commerce platform for outdoor clothing, built with Angular to provide a seamless and modern user experience. This project demonstrates fullstack web development best practices.
 
 ## Features
 
 - **Product Catalog**: Explore a variety of outdoor clothing items with detailed descriptions and images.
 - **Shopping Cart**: Add, remove, and manage items with live updates on quantities and pricing.
-- **User Authentication**: Secure registration and login system to manage user accounts.
+- **User Authentication**: Secure registration and login system to manage user accounts. and store specific operations.
 - **Order Management**: View and track past orders, and place new ones.
 - **Responsive Design**: Fully responsive and optimized for both desktop and mobile devices.
 - **Search and Filter**: Find items easily with various search options and filters based on preferences.
@@ -17,7 +17,6 @@
 - **Backend**: .NET Core
 - **Database**: SQL Server
 - **Styling**: Tailwind CSS
-- **Hosting**: Azure
 - **API Integration**: RESTful APIs for communication between the frontend and backend
 
 ## Installation and Setup
