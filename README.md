@@ -1,6 +1,6 @@
 
 # Summit Wear
-
+<img src="https://res.cloudinary.com/dm3vmtten/image/upload/v1737033442/SummitWearNoBg_qa98lx.png"></img>
 **Summit Wear** is an e-commerce platform for outdoor clothing, built with Angular to provide a seamless and modern user experience. This project demonstrates fullstack web development best practices and utilizes cloud technologies for scalability and performance.
 
 ## Features
