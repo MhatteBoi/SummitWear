@@ -7,7 +7,10 @@ import { HeroComponent } from './components/hero/hero.component'; // The HeroCom
 import { SharedModule } from '../../shared/shared.module';
 import { WeatherComponent } from './components/weather/weather.component';
 import { FormsModule } from '@angular/forms';
-import { PromotionComponent } from './components/promotion/promotion.component'; // Import this
+import { PromotionComponent } from './components/promotion/promotion.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { LookBookComponent } from './components/look-book/look-book.component';
+import { OurPromiseComponent } from './components/our-promise/our-promise.component'; // Import this
 
 // Define the routes for this module
 const routes: Routes = [
@@ -19,13 +22,19 @@ const routes: Routes = [
     HomeComponent,
     HeroComponent,
     WeatherComponent,
-    PromotionComponent], // Declare the components to be used within this module
+    PromotionComponent,
+    AboutUsComponent,
+    LookBookComponent,
+    OurPromiseComponent], // Declare the components to be used within this module
   imports: [
     CommonModule, // Include the CommonModule for common directives and pipes
     RouterModule.forChild(routes), // Configure the router for this module using the defined routes
     SharedModule, // Import the SharedModule to make shared components/services available
     FormsModule,
 
+  ],
+    exports: [
+    LookBookComponent, // Optionally, export it if needed
   ]
 })
 export class HomeModule { } // The HomeModule class that encapsulates everything for the home page of the app

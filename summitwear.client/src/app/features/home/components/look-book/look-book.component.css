@@ -1,0 +1,28 @@
+.carousel-track {
+  display: flex;
+  width: 200%; /* Double the images for looping */
+  animation: scroll 25s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%); /* Only move halfway since we duplicate */
+  }
+}
+
+.carousel-slide {
+  flex: 0 0 25%; /* Each slide takes a quarter */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .carousel-slide img {
+    max-width: 40rem;
+    height: auto;
+    object-fit: contain;
+  }

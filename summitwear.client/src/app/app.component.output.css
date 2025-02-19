@@ -1,6 +1,6 @@
 :host {
   max-width: 1280px;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
 }
 
@@ -16,4 +16,5 @@ table {
 router-outlet {
   display: block;
   /* Adjust to match the navbar height */
+  background-color: antiquewhite;
 }

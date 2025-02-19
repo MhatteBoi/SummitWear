@@ -1,0 +1,26 @@
+<div class="flex flex-col min-h-screen bg-gray-50">
+    <div class="flex flex-1 h-screen bg-gray-900">
+        <!-- Sidebar (hidden on small screens) -->
+        <aside class="w-72 bg-gray-900 h-full sticky top-0 h-full pt-32 bg-opacity-90 text-white flex-col shadow-lg hidden md:flex relative">
+            <h2 class="text-2xl font-semibold p-5 border-b border-gray-700 tracking-wide">
+                Admin Panel
+            </h2>
+            <nav class="flex-1 mt-4 sticky top-0">
+                <ul>
+                    <li *ngFor="let link of adminLinks">
+                        <a [routerLink]="link.path"
+                           routerLinkActive="bg-gray-700 text-white"
+                           class="block px-6 py-3 rounded-lg mx-3 mb-2 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300">
+                            {{ link.label }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8  pt-32 bg-white shadow-inner rounded-lg">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

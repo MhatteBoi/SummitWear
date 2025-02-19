@@ -1,0 +1,39 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Order Overview</h2>
+
+    <!-- Search Bar -->
+    <div class="mb-6">
+        <input type="text"
+               placeholder="Search Orders"
+               [(ngModel)]="searchQuery"
+               class="border rounded p-2 w-full" />
+    </div>
+
+    <!-- Order List -->
+    <div class="bg-gray-100 p-4 rounded-lg">
+        <table class="min-w-full bg-white border border-gray-200 mt-2">
+            <thead>
+                <tr class="bg-gray-100 border-b">
+                    <th class="py-2 px-4 border">Order ID</th>
+                    <th class="py-2 px-4 border">Customer Name</th>
+                    <th class="py-2 px-4 border">Status</th>
+                    <th class="py-2 px-4 border">Total Price</th>
+                    <th class="py-2 px-4 border">Order Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of filteredOrders()">
+                    <td class="py-2 px-4 border">{{ order.id }}</td>
+                    <td class="py-2 px-4 border">{{ order.customerName }}</td>
+                    <td class="py-2 px-4 border">
+                        <span [ngClass]="getStatusClass(order.status)">
+                            {{ order.status }}
+                        </span>
+                    </td>
+                    <td class="py-2 px-4 border">{{ order.totalPrice }} SEK</td>
+                    <td class="py-2 px-4 border">{{ order.orderDate | date:'short' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

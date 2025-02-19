@@ -1,0 +1,100 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Product Management</h2>
+
+    <div class="space-y-4">
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <button class="w-full text-left text-lg font-semibold" (click)="toggleCategory('jackets')">Jackets</button>
+            <div id="jackets" class="overflow-x-auto" [ngClass]="{'hidden': !isCategoryVisible('jackets')}">
+                <table class="min-w-full bg-white border border-gray-200 mt-2">
+                    <thead>
+                        <tr class="bg-gray-100 border-b">
+                            <th class="py-2 px-4 border">Image</th>
+                            <th class="py-2 px-4 border">Name</th>
+                            <th class="py-2 px-4 border">Price</th>
+                            <th class="py-2 px-4 border">Stock</th>
+                            <th class="py-2 px-4 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-2 px-4 border"><img src="https://res.cloudinary.com/demo/image/upload/summit_jacket.jpg" alt="Summit Jacket" class="h-12 object-cover"></td>
+                            <td class="py-2 px-4 border">Summit Jacket</td>
+                            <td class="py-2 px-4 border">1499 SEK</td>
+                            <td class="py-2 px-4 border">10</td>
+                            <td class="py-2 px-4 border">
+                                <button class="bg-blue-500 text-white px-2 py-1 rounded">Update</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded ml-2">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <button class="w-full text-left text-lg font-semibold" (click)="toggleCategory('boots')">Boots</button>
+            <div id="jackets" class="overflow-x-auto" [ngClass]="{'hidden': !isCategoryVisible('boots')}">
+                <table class="min-w-full bg-white border border-gray-200 mt-2">
+                    <thead>
+                        <tr class="bg-gray-100 border-b">
+                            <th class="py-2 px-4 border">Image</th>
+                            <th class="py-2 px-4 border">Name</th>
+                            <th class="py-2 px-4 border">Price</th>
+                            <th class="py-2 px-4 border">Stock</th>
+                            <th class="py-2 px-4 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-2 px-4 border"><img src="https://res.cloudinary.com/demo/image/upload/summit_jacket.jpg" alt="Summit boots" class="h-12 object-cover"></td>
+                            <td class="py-2 px-4 border">Summit Jacket</td>
+                            <td class="py-2 px-4 border">1499 SEK</td>
+                            <td class="py-2 px-4 border">10</td>
+                            <td class="py-2 px-4 border">
+                                <button class="bg-blue-500 text-white px-2 py-1 rounded">Update</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded ml-2">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded-lg">
+            <button class="w-full text-left text-lg font-semibold" (click)="toggleCategory('pants')">Pants</button>
+            <div id="pants" class="overflow-x-auto" [ngClass]="{'hidden': !isCategoryVisible('pants')}">
+                <table class="min-w-full bg-white border border-gray-200 mt-2">
+                    <thead>
+                        <tr class="bg-gray-100 border-b">
+                            <th class="py-2 px-4 border">Image</th>
+                            <th class="py-2 px-4 border">Name</th>
+                            <th class="py-2 px-4 border">Price</th>
+                            <th class="py-2 px-4 border">Stock</th>
+                            <th class="py-2 px-4 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-2 px-4 border"><img src="https://res.cloudinary.com/demo/image/upload/trail_pants.jpg" alt="Trail Pants" class="h-12 object-cover"></td>
+                            <td class="py-2 px-4 border">Trail Pants</td>
+                            <td class="py-2 px-4 border">899 SEK</td>
+                            <td class="py-2 px-4 border">15</td>
+                            <td class="py-2 px-4 border">
+                                <button class="bg-blue-500 text-white px-2 py-1 rounded">Update</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded ml-2">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6 p-4 bg-gray-100 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">Add New Product</h3>
+        <input placeholder="Product Name" class="border rounded p-2 w-full mb-2">
+        <input type="number" placeholder="Price" class="border rounded p-2 w-full mb-2">
+        <input type="number" placeholder="Stock" class="border rounded p-2 w-full mb-2">
+        <input placeholder="Image URL" class="border rounded p-2 w-full mb-2">
+        <button class="w-full bg-green-500 text-white py-2 rounded">Add Product</button>
+    </div>
+</div>

@@ -3,18 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
+
+@NgModule({ declarations: [
+        AppComponent,
+    ],
+  bootstrap: [
+    AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
-    SharedModule,
-    HttpClientModule,
-  ],
-  bootstrap: [AppComponent],
-})
+    SharedModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

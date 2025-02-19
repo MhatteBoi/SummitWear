@@ -1,0 +1,36 @@
+<section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12">Seasonal Collections</h2>
+
+        <div class="lookbook-container">
+            <div *ngFor="let season of seasonsList; trackBy: trackByFn"
+                 class="season-container mb-16"
+                 (mouseenter)="onMouseEnter(season)"
+                 (mouseleave)="onMouseLeave(season)">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4 capitalize">{{ season }} Collection</h3>
+
+                <div class="carousel-wrapper relative w-full h-96 overflow-hidden">
+                    <div class="carousel-track flex"
+                         [style.transform]="'translateX(' + currentPositions[season] + '%)'">
+                        <ng-container *ngFor="let image of seasons[season]; let i = index; trackBy: trackByFn">
+                            <div class="carousel-slide w-full h-full flex-shrink-0">
+                                <img [src]="image.src"
+                                     [alt]="image.alt"
+                                     class="w-full h-full object-cover transition-opacity duration-300">
+                            </div>
+                        </ng-container>
+
+                        <!-- DUPLICATE FOR SEAMLESS SCROLLING -->
+                        <ng-container *ngFor="let image of seasons[season]">
+                            <div class="carousel-slide w-full h-full flex-shrink-0">
+                                <img [src]="image.src"
+                                     [alt]="image.alt"
+                                     class="w-full h-full object-cover transition-opacity duration-300">
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

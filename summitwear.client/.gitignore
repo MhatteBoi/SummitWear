@@ -19,6 +19,9 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+/tls
+localhost.key
+localhost.crt
 
 # Visual Studio Code
 .vscode/*

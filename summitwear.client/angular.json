@@ -67,10 +67,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+              "ssl": true,
+              "sslCert": "tls/localhost.pem",
+              "sslKey": "tls/localhost-key.pem",
               "buildTarget": "summitwear.client:build:production"
             },
             "development": {
-              "buildTarget": "summitwear.client:build:development"
+              "buildTarget": "summitwear.client:build:development",
+              "ssl": true,
+              "sslCert": "tls/localhost.pem",
+              "sslKey": "tls/localhost-key.pem"
             }
           },
           "defaultConfiguration": "development",
