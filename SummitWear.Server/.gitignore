@@ -1,0 +1,12 @@
+﻿# Ignore user secrets and sensitive config files
+appsettings.json
+appsettings.*.json
+secrets.json
+
+# Ignore the .vs, bin, and obj folders
+.vs/
+bin/
+obj/
+
+# Ignore environment files
+.env
