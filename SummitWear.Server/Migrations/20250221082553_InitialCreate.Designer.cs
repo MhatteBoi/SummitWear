@@ -12,15 +12,15 @@ using SummitWear.Server.Data;
 namespace SummitWear.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241226133604_SeedProductData")]
-    partial class SeedProductData
+    [Migration("20250221082553_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
+                .HasAnnotation("ProductVersion", "9.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -112,26 +112,6 @@ namespace SummitWear.Server.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            CategoryId = 1,
-                            Description = "Warm jacket",
-                            Name = "Jacket",
-                            Price = 150m,
-                            Stock = 10
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            CategoryId = 1,
-                            Description = "Hiking boots",
-                            Name = "winter-jacket",
-                            Price = 120m,
-                            Stock = 15
-                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.ProductImage", b =>
@@ -154,20 +134,6 @@ namespace SummitWear.Server.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImage");
-
-                    b.HasData(
-                        new
-                        {
-                            ImageId = 1,
-                            ProductId = 1,
-                            Url = "https://drive.google.com/uc?id=17K_lwUtbgkput0pWFkt6kYDlMPAGiP9a"
-                        },
-                        new
-                        {
-                            ImageId = 2,
-                            ProductId = 2,
-                            Url = "https://drive.google.com/uc?id=1DNTRyruDPuAIewlLyPz1phySo0LxhgPd"
-                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.ShoppingCart", b =>
@@ -216,25 +182,55 @@ namespace SummitWear.Server.Migrations
 
             modelBuilder.Entity("SummitWear.Server.Models.User", b =>
                 {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });

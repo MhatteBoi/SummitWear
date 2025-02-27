@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SummitWear.Server.Data;
 
@@ -11,9 +12,11 @@ using SummitWear.Server.Data;
 namespace SummitWear.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250221111204_AddUser")]
+    partial class AddUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,6 +50,20 @@ namespace SummitWear.Server.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "02c24973-4104-4a75-905e-5ca8abda1e32",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "43cf588f-3996-490a-a4de-0ec46e95b776",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -134,6 +151,18 @@ namespace SummitWear.Server.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "86646feb-71f7-4b88-b17d-2a0c6ccd282e",
+                            RoleId = "43cf588f-3996-490a-a4de-0ec46e95b776"
+                        },
+                        new
+                        {
+                            UserId = "b74ddd14-6340-4840-95c2-db12554843e5",
+                            RoleId = "02c24973-4104-4a75-905e-5ca8abda1e32"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -378,23 +407,6 @@ namespace SummitWear.Server.Migrations
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
-                        new
-                        {
-                            Id = "86646feb-71f7-4b88-b17d-2a0c6ccd282e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "919f581c-4865-476d-948f-ff45a641fa24",
-                            Email = "admin@example.com",
-                            EmailConfirmed = true,
-                            FullName = "Admin User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
-                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECbna+zc7NtdoZRW5crNSPrcGOThDbWlo/apUG5b5yCX1vNjg07+gQO3xyNOfvcs7A==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "aceefe46-b163-4b1c-85b1-bd7e170dd5aa",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@example.com"
-                        },
                         new
                         {
                             Id = "b74ddd14-6340-4840-95c2-db12554843e5",

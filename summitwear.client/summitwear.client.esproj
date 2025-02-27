@@ -8,8 +8,6 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\summitwear.client\browser\</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\app\core\guards\" />
-    <Folder Include="src\app\core\services\" />
     <Folder Include="src\app\features\admin\components\" />
     <Folder Include="src\app\features\checkout\components\" />
     <Folder Include="src\app\features\privacy\components\" />
