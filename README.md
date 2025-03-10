@@ -13,7 +13,7 @@ Summit Wear is an e-commerce platform built for outdoor clothing with an emphasi
 - **Product Catalog**:  
   Explore a variety of outdoor clothing items, each with detailed descriptions, prices, and images.
 
-- **Weather Recommendation**:
+- **Weather Recommendation**:<br />
   Get Recommendation on what kind of wear you need based on weather.
 
 - **Shopping Cart**:  
