@@ -57,6 +57,7 @@ Summit Wear is an e-commerce platform built for outdoor clothing with an emphasi
   <br />
 **Admin Dashboard**
   Get information and data straight from the admin page and analytics. <br />
+  <br />
   <img src="https://res.cloudinary.com/dm3vmtten/image/upload/v1741609106/DashBoard_rghkif.jpg"></img>
 <hr />
 
