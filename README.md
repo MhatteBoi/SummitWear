@@ -10,20 +10,20 @@ Summit Wear is an e-commerce platform built for outdoor clothing with an emphasi
 
 ## Features
 
-- **Product Catalog**:  
+- **Product management and shoppingcart logic**:  
   Explore a variety of outdoor clothing items, each with detailed descriptions, prices, and images.
+  Add, remove, and manage items with live updates on quantities, prices, and the total.
 
 - **Weather Recommendation**:<br />
   Get Recommendation on what kind of wear you need based on weather.
 
-- **Shopping Cart**:  
-  Add, remove, and manage items with live updates on quantities, prices, and the total.
-
 - **User Authentication**:  
   Secure registration and login system allowing users to manage their profiles and shopping experience.
+  JWT Token.
 
-- **Order Management**:  
+- **Admin dahsboard**:  
   View past orders and track the status of current orders for a smooth shopping experience.
+  Keep track of store progress and real time data on how the store is progressing.
 
 - **Responsive Design**:  
   Fully responsive and optimized for both desktop and mobile devices, ensuring a great experience for all users.
@@ -43,13 +43,14 @@ Summit Wear is an e-commerce platform built for outdoor clothing with an emphasi
   - **Tailwind CSS** for styling, providing a modern and clean design.
 
 ### Backend
-- Powered by **.NET Core**, ensuring fast and secure API integration between the frontend and database.
+- Powered by **ASP.NET **, ensuring fast and secure API integration between the frontend and database.
   - RESTful API architecture.
   - User authentication and authorization with JWT and ASP Identity.
 
 ### Database
 - **SQL Server** used to store user and order data securely.
   - Full CRUD operations for managing products, users, and orders.
+  - Entityframework
 
 ### API Integration
 - RESTful APIs for communication between the frontend and backend, with endpoints for user authentication, product management, and order processing.
