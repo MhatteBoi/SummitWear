@@ -6,6 +6,7 @@ namespace SummitWear.Server.Models
     public class Product
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
 
         [Required]
@@ -22,6 +23,8 @@ namespace SummitWear.Server.Models
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; } // Foreign key to Category
+
+        public Category Category { get; set; }
 
         public ICollection<ProductImage>? Images { get; set; }
     }

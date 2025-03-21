@@ -18,6 +18,7 @@
                 <th class="py-2 px-4 border">Email</th>
                 <th class="py-2 px-4 border">Status</th>
                 <th class="py-2 px-4 border">Registration Date</th>
+                <th class="py-2 px-4 border">Actions</th> <!-- New Column for Actions -->
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,13 @@
                     {{ user.status }}
                 </td>
                 <td class="py-2 px-4 border">{{ user.registrationDate | date: 'shortDate' }}</td>
+                <td class="py-2 px-4 border">
+                    <button (click)="assignAdminRole(user.id)"
+                            class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+                            [disabled]="user.roles.includes('Admin')">
+                        {{ user.roles.includes('Admin') ? 'Admin' : 'Make Admin' }}
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

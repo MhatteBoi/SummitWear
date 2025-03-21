@@ -4,18 +4,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 type Season = 'fall' | 'winter' | 'spring' | 'summer';
 
 @Component({
-  selector: 'app-look-book',
-  templateUrl: './look-book.component.html',
-  styleUrls: ['./look-book.component.css'],
-  animations: [
-    trigger('fadeRotate', [
-      state('visible', style({ opacity: 1, transform: 'rotateY(0deg)' })),
-      state('hidden', style({ opacity: 0, transform: 'rotateY(180deg)' })),
-      transition('visible <=> hidden', [
-        animate('0.5s ease-in-out')
-      ])
-    ])
-  ]
+    selector: 'app-look-book',
+    templateUrl: './look-book.component.html',
+    styleUrls: ['./look-book.component.css'],
+    animations: [
+        trigger('fadeRotate', [
+            state('visible', style({ opacity: 1, transform: 'rotateY(0deg)' })),
+            state('hidden', style({ opacity: 0, transform: 'rotateY(180deg)' })),
+            transition('visible <=> hidden', [
+                animate('0.5s ease-in-out')
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class LookBookComponent {
   seasonsList: Season[] = ['fall', 'winter', 'spring', 'summer'];

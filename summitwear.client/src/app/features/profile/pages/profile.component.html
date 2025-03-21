@@ -1,0 +1,50 @@
+<div class=" min-h-screen mx-auto p-6  max-w-7xl flex-1 p-8 justify-center items-start flex pt-32 bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-6 h-screen hidden md:block">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Profile</h2>
+        <nav>
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="block p-2 rounded bg-blue-600 text-white">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#" class="block p-2 rounded hover:bg-gray-200 transition">Settings</a>
+                </li>
+                <li>
+                    <a href="#" class="block p-2 rounded hover:bg-gray-200 transition">Order History</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <!-- Profile Header -->
+            <div class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/80" alt="Profile Picture" class="w-20 h-20 rounded-full border-4 border-blue-500">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">asdadas</h2> <!-- {{ user.fullName }} -->
+                    <p class="text-gray-500">asdasd</p>   <!-- {{ user.email }} -->
+                </div>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-100 p-4 rounded">
+                    <p class="text-gray-600"><strong>Member since:</strong>asdadsadsa  </p>  <!-- {{ user.createdAt }} -->
+                </div>
+                <div class="bg-gray-100 p-4 rounded">
+                    <p class="text-gray-600"><strong>Total Orders:</strong> asdasdasd </p>  <!-- {{ user.orders }} -->
+                </div>
+            </div>
+
+            <!-- Edit Profile Button -->
+            <div class="mt-6">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                    Edit Profile
+                </button>
+            </div>
+        </div>
+    </main>
+</div>

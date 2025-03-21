@@ -1,6 +1,6 @@
 <!-- Center everything and improve responsiveness -->
-<section class="relative flex items-center  justify-center  h-screen bg-black py-16 lg:py-24 xl:py-32">
-    <div class="absolute inset-0">
+<section class="w-full justify-center flex items-center h-screen  py-16 lg:py-24 xl:py-32">
+    <div class="absolute inset-0 ">
         <img class="h-full w-full object-cover"
              src="https://res.cloudinary.com/dm3vmtten/image/upload/v1735830732/switzerland-4974469_1920_jaz5xp.jpg"
              alt="Hero section snow adventure" />
@@ -9,11 +9,11 @@
     <div class="absolute inset-0 hidden bg-gradient-to-r from-black  to-transparent md:block"></div>
     <div class="absolute inset-0 block bg-black/60 md:hidden"></div>
 
-    <div class="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8">
+    <div class="relative z-10 mx-auto max-w-7xl px-6 items-center text-center lg:px-8">
         <!-- Main Flexbox Layout -->
-        <div class="flex flex-col items-center text-center md:text-left lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-col items-center max-w-7xl text-center md:text-left lg:flex-row lg:items-center lg:justify-between">
             <!-- Text and CTA Section -->
-            <div class="lg:w-1/2 mb-24">
+            <div class="lg:w-1/2 mb-24 txtShadow ">
                 <h2 class="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                     Gear Up for the Ultimate Adventure
                 </h2>
@@ -21,8 +21,8 @@
                     Explore the outdoors with our durable, weather-tested, Double-Layered Gear designed for every terrain.
                 </p>
 
-                <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-                    <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-rustOrange px-6 py-3 text-lg font-semibold text-white transition-all duration-200 hover:bg-accent focus:ring-4 focus:ring-orange-500">
+                <div class="mt-8  flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                    <button type="submit" class="inline-flex txtShadow items-center justify-center rounded-lg bg-rustOrange px-6 py-3 text-lg font-semibold text-white transition-all duration-200 hover:bg-accent focus:ring-4 focus:ring-orange-500">
                         Shop now!
                     </button>
 
@@ -33,12 +33,13 @@
                         </svg>
                     </div>
                 </div>
-            </div>
 
+            </div>
             <!-- Image Grid Section -->
-            <div class="mt-[200px] w-full 2xl:mt-[200px] lg:w-1/2">
+            <div class="mt-[200px] 2xl:mt-[800px] relative left-[20%] lg:w-1/2">
                 <app-image-grid></app-image-grid>
             </div>
+
         </div>
     </div>
 </section>

@@ -9,6 +9,7 @@ import { ProductManageComponent } from './components/product-manage/product-mana
 import { CrmComponent } from './components/crm/crm.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
+import { SharedModule } from '../../shared/shared.module'
 
 
 @NgModule({
@@ -19,11 +20,12 @@ import { AdminManageComponent } from './components/admin-manage/admin-manage.com
     ProductManageComponent,
     CrmComponent,
     AnalyticsComponent,
-    AdminManageComponent
+    AdminManageComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     AdminRoutingModule
   ]
 })

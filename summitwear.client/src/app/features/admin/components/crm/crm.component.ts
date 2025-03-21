@@ -1,21 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-crm',
-  templateUrl: './crm.component.html',
-  styleUrl: './crm.component.css'
+    selector: 'app-crm',
+    templateUrl: './crm.component.html',
+    styleUrl: './crm.component.css',
+    standalone: false
 })
 export class CrmComponent {
   searchQuery: string = '';
+  users: any[] = [];
 
-  // Fake user data
-  users = [
-    { id: 'USR001', name: 'John Doe', email: 'john.doe@example.com', status: 'Active', registrationDate: new Date('2025-01-01') },
-    { id: 'USR002', name: 'Jane Smith', email: 'jane.smith@example.com', status: 'Inactive', registrationDate: new Date('2025-01-05') },
-    { id: 'USR003', name: 'Mike Johnson', email: 'mike.johnson@example.com', status: 'Banned', registrationDate: new Date('2025-01-10') },
-    { id: 'USR004', name: 'Sara Lee', email: 'sara.lee@example.com', status: 'Active', registrationDate: new Date('2025-01-15') },
-    { id: 'USR005', name: 'Emily Davis', email: 'emily.davis@example.com', status: 'Inactive', registrationDate: new Date('2025-01-20') }
-  ];
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.fetchUsers();
+  }
+
+  fetchUsers() {
+    this.http.get<any[]>('https://localhost:7037/api/users').subscribe({
+      next: (data) => (this.users = data),
+      error: (err) => console.error('Error fetching users', err)
+    });
+  }
+
+  assignAdminRole(userId: string): void {
+    this.http.post(`https://localhost:7037/api/users/${userId}/assign-admin`, { userId, role: 'Admin' })
+      .subscribe({
+        next: () => {
+          alert('User has been assigned the Admin role!');
+          this.fetchUsers(); // Refresh the user list
+        },
+        error: (err) => {
+          console.error('Error assigning admin role:', err);
+          alert('Failed to assign Admin role.');
+        }
+      });
+  }
 
   // Filter users based on the search query
   filteredUsers() {

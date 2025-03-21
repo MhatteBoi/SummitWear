@@ -1,16 +1,16 @@
-<section class="flex items-center  justify-center  h-screen">
-    <div class="container mx-auto p-6">
+<section class="flex items-center container mx-auto pt-24  justify-center  min-h-screen">
+    <div class="container mx-auto p-6 flex-1">
         <h1 class="text-4xl font-bold mb-6">Product Catalog</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             <div *ngFor="let product of products" class="border rounded-lg overflow-hidden shadow-lg bg-white">
-                <img [src]="product.image" alt="{{ product.name }}" class="w-full h-64 object-cover">
+                <img [src]="product.images[0].url" alt="{{ product.name }}" class="w-full h-64 object-cover">
 
                 <div class="p-4">
                     <h2 class="text-xl font-semibold">{{ product.name }}</h2>
                     <p class="text-gray-600">${{ product.price }}</p>
 
-                    <button (click)="viewProduct(product.id)"
+                    <button [routerLink]="['/product', product.productId]"
                             class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
                         View Product
                     </button>

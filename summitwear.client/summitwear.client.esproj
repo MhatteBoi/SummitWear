@@ -14,8 +14,6 @@
     <Folder Include="src\app\features\product-catalog\components\" />
     <Folder Include="src\app\features\product\components\" />
     <Folder Include="src\app\features\shopping-cart\components\" />
-    <Folder Include="src\app\services\" />
-    <Folder Include="src\app\shared\components\" />
     <Folder Include="src\assets\images\" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ namespace SummitWear.Server.Models
         public class ProductImage
         {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ImageId { get; set; } // Primary Key
 
         [Required]

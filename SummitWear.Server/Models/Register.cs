@@ -8,8 +8,6 @@ namespace SummitWear.Server.Models
         [Required]
         public required string FullName { get; set; }
 
-        [Required]
-        public required string Username { get; set; }
 
         [Required]
         [EmailAddress]

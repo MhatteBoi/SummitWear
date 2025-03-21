@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Observable, tap } from 'rxjs';
@@ -6,14 +6,15 @@ import { Observable, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) { }
+export class AdminGuard implements CanActivate {
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  canActivate(): Observable<boolean> {
-    return this.authService.isAuthenticated().pipe(
-      tap(isAuth => {
-        if (!isAuth) this.router.navigate(['/login']);
-      })
-    );
+  canActivate(): boolean {
+    if (this.authService.getUserRole() === 'Admin') {
+      return true;
+    }
+    this.router.navigate(['/']);
+    return false;
   }
 }

@@ -1,0 +1,9 @@
+<div class="card">
+  <h2>Are you sure you want to delete this product?</h2>
+  <img [src]="product.images[0].url" alt="Product image" *ngIf="product.images.length">
+  <p><strong>ID:</strong> {{ product.productId }}</p>
+  <p><strong>Name:</strong> {{ product.name }}</p>
+  
+  <button (click)="onDelete()">Delete</button>
+  <button (click)="onCancel()">Cancel</button>
+</div>

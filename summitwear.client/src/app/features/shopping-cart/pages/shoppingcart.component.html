@@ -1,1 +1,26 @@
-<p>shoppingcart works!</p>
+<section class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Shopping Cart</h1>
+
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems" class="flex items-center justify-between border-b p-4">
+            <div class="flex items-center">
+                <img [src]="item.image" alt="{{ item.name }}" class="w-16 h-16 rounded">
+                <div class="ml-4">
+                    <h2 class="text-lg font-semibold">{{ item.name }}</h2>
+                    <p class="text-gray-600">${{ item.price }} x {{ item.quantity }}</p>
+                </div>
+            </div>
+            <button (click)="removeFromCart(item.id)" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">
+                Remove
+            </button>
+        </div>
+
+        <button (click)="clearCart()" class="mt-6 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+            Clear Cart
+        </button>
+    </div>
+
+    <ng-template #emptyCart>
+        <p class="text-gray-600">Your cart is empty.</p>
+    </ng-template>
+</section>

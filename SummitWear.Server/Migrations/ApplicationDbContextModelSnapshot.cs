@@ -17,7 +17,7 @@ namespace SummitWear.Server.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.2")
+                .HasAnnotation("ProductVersion", "9.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -163,13 +163,91 @@ namespace SummitWear.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Season")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Season = "Winter",
+                            Type = "Pants"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            Season = "Spring",
+                            Type = "Pants"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            Season = "Summer",
+                            Type = "Pants"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            Season = "Fall",
+                            Type = "Pants"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            Season = "Winter",
+                            Type = "Jacket"
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            Season = "Spring",
+                            Type = "Jacket"
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            Season = "Summer",
+                            Type = "Jacket"
+                        },
+                        new
+                        {
+                            CategoryId = 8,
+                            Season = "Fall",
+                            Type = "Jacket"
+                        },
+                        new
+                        {
+                            CategoryId = 9,
+                            Season = "Winter",
+                            Type = "Boots"
+                        },
+                        new
+                        {
+                            CategoryId = 10,
+                            Season = "Spring",
+                            Type = "Boots"
+                        },
+                        new
+                        {
+                            CategoryId = 11,
+                            Season = "Summer",
+                            Type = "Boots"
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            Season = "Fall",
+                            Type = "Boots"
+                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.Order", b =>
@@ -240,6 +318,8 @@ namespace SummitWear.Server.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -376,42 +456,6 @@ namespace SummitWear.Server.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "86646feb-71f7-4b88-b17d-2a0c6ccd282e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "919f581c-4865-476d-948f-ff45a641fa24",
-                            Email = "admin@example.com",
-                            EmailConfirmed = true,
-                            FullName = "Admin User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
-                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECbna+zc7NtdoZRW5crNSPrcGOThDbWlo/apUG5b5yCX1vNjg07+gQO3xyNOfvcs7A==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "aceefe46-b163-4b1c-85b1-bd7e170dd5aa",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@example.com"
-                        },
-                        new
-                        {
-                            Id = "b74ddd14-6340-4840-95c2-db12554843e5",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8554266-b401-4519-9aeb-a9283053fc58",
-                            Email = "user@example.com",
-                            EmailConfirmed = true,
-                            FullName = "Normal User",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@EXAMPLE.COM",
-                            NormalizedUserName = "USER@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBBhD5JHjRbQMUbE4/0sZcNfALzl5jtPRGMQvlPVc7xNXZMDKGpYGYqxnRRhMHGcVA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "RNQD5JCPJZPXLXLKZQTLPXKGMYQNQNPQ",
-                            TwoFactorEnabled = false,
-                            UserName = "user@example.com"
-                        });
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.UserInfo", b =>
@@ -495,6 +539,17 @@ namespace SummitWear.Server.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SummitWear.Server.Models.Product", b =>
+                {
+                    b.HasOne("SummitWear.Server.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("SummitWear.Server.Models.ProductImage", b =>

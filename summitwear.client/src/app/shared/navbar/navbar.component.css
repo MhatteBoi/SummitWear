@@ -1,0 +1,12 @@
+.shrink {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.bg-glass {
+  background-color: rgba(20, 20, 20, 0.8); /* Glass effect */
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(10px); /* Apply blur */
+}
