@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cartService/cart-service.service'
 interface CartItem {
-  id: number;
+  productId: number;
   name: string;
   price: number;
   quantity: number;
@@ -55,7 +55,7 @@ export class ShoppingcartComponent implements OnInit{
   }
 
   removeItem(item: CartItem): void {
-    this.cartItems = this.cartItems.filter(cartItem => cartItem.id !== item.id);
+    this.cartItems = this.cartItems.filter(cartItem => cartItem.id !== item.productId);
   }
 
   checkout(): void {

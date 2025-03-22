@@ -21,15 +21,17 @@ export class CartService {
     let cart = JSON.parse(localStorage.getItem('cart') ?? '[]');
 
     // Check if product already exists
-    const existingItem = cart.find((item: any) => item.id === product.id);
+    const existingItem = cart.find((item: any) => item.productId === product.productId);
     if (existingItem) {
       existingItem.quantity += 1; // Increase quantity
     } else {
       cart.push({ ...product, quantity: 1 }); // Add new product
     }
+    console.log("the cart: ", cart,"existingItem: " , existingItem, "product: " , product);
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    this.cartItems.next(cart.reduce((sum: any, item: { quantity: any; }) => sum + item.quantity, 0));
+    const totalItems = cart.reduce((sum: number, item: { quantity: number }) => sum + item.quantity, 0);
+    this.cartItems.next(totalItems);
   }
 
   removeFromCart(productId: number) {

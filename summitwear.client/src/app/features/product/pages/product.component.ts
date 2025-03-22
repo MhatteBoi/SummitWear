@@ -23,12 +23,14 @@ export class ProductComponent implements OnInit {
 
     if (productId) {
       this.productService.getProduct(productId).subscribe((product) => {
-        this.product = product
+        this.product = product;
+        console.log("Product loaded:", this.product);
       });
     }
   }
 
   addToCart() {
+    
     this.cartService.addToCart(this.product);
   }
 }
