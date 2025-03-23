@@ -5,7 +5,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/summitwear.client/browser"
+        "distDir": "dist/summitwear/browser" // Replace summit-wear with your project name
       }
     }
   ],
