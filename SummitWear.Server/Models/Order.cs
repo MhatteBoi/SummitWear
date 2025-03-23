@@ -9,5 +9,9 @@ namespace SummitWear.Server.Models
 
         public DateTime OrderDate { get; set; }
         public int UserId { get; set; } // Foreign key to User
+
+        // Navigation property for related OrderItems
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }
+
