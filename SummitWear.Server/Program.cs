@@ -56,6 +56,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
+
+// add api key from environment variable from render
+builder.Configuration.AddEnvironmentVariables();
+
+var apiKey = builder.Configuration["API_KEY"];
+
 var app = builder.Build();
 
 app.UseDefaultFiles();
