@@ -7,20 +7,7 @@
       "ApplicableLocations": []
     }
   ],
-  "BuildFiles": [
-    {
-      "Input": "src\\styles.css",
-      "Output": ""
-    },
-    {
-      "Input": "src\\app\\app.component.css",
-      "Output": ""
-    },
-    {
-      "Input": "src\\app\\features\\home\\components\\weather\\weather.component.css",
-      "Output": ""
-    }
-  ],
+  "BuildFiles": [],
   "PackageConfigurationFile": null,
   "CustomRegexes": {
     "Razor": {

@@ -50,7 +50,7 @@ public class OrderController : ControllerBase
         var order = new Order
         {
             OrderDate = DateTime.Now,
-            UserId = userId,
+            
         };
 
         _context.Orders.Add(order);

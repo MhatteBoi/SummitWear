@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cartService/cart-service.service'
+
 interface CartItem {
   productId: number;
   name: string;

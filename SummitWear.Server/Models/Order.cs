@@ -8,7 +8,7 @@ namespace SummitWear.Server.Models
         public int OrderId { get; set; }
 
         public DateTime OrderDate { get; set; }
-        public int UserId { get; set; } // Foreign key to User
+        public Guid UserId { get; set; } // Foreign key to User
 
         // Navigation property for related OrderItems
         public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
